@@ -1,0 +1,235 @@
+
+.nepali-date-picker {
+  --ne-datepicker-primary-color: #1d49e7;
+
+  position: relative;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  width: 100%;
+  a.active {
+    svg {
+      fill: var(--ne-datepicker-primary-color);
+      opacity: 0.9;
+    }
+  }
+  .form-icon svg {
+    width: 14px;
+    opacity: 0.3;
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    cursor: pointer;
+  }
+
+  .datepicker {
+    &__container {
+      border: 1px solid #eee;
+      background: #fff;
+      width: 294px;
+      box-shadow: rgba(10, 10, 15, 0.2) 0px 7px 29px 0px;
+      position: absolute;
+      z-index: 99999;
+
+      &__select {
+        border: none;
+        color: #fff;
+        background: none;
+        font-size: inherit;
+        &:focus-visible {
+          outline: none;
+        }
+
+        option {
+          color: #333;
+          &:checked,
+          &:hover {
+            background-color: var(--ne-datepicker-primary-color);
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &__options-container {
+      padding: 12px 5px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: var(--ne-datepicker-primary-color);
+      color: #fff;
+      line-height: 25px;
+      font-size: 1em;
+    }
+    &__days-container {
+      display: flex;
+      justify-content: center;
+      color: #777;
+    }
+    &__days {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    &__weekday {
+      padding: 8px;
+      font-weight: bold;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 14px;
+    }
+    &__date-container {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin: 8px 0;
+    }
+    &__date-container {
+      div {
+        height: 100%;
+      }
+    }
+    &__date {
+      cursor: pointer;
+      border-radius: 50%;
+
+      &:hover:not(.datepicker__date--active) {
+        background-color: #eee;
+      }
+
+      &--disabled {
+        cursor: default;
+        background: #f3f3f3;
+        border-radius: 50%;
+        text-decoration: line-through;
+      }
+
+      &--active {
+        background-color: var(--ne-datepicker-primary-color);
+        color: #fff;
+      }
+
+      &--current-day {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 999;
+        height: 100%;
+      }
+    }
+  }
+
+  .np_datepicker_input {
+    box-sizing: border-box;
+    width: inherit;
+    border: 1px solid #eee;
+    padding: 10px;
+    font-size: 14px;
+    color: #777;
+    border-radius: 8px;
+    height: 40px;
+    &--active,
+    &:focus,
+    &:hover {
+      outline: 1px solid var(--ne-datepicker-primary-color);
+    }
+
+    &--error:not(.np_datepicker_input:hover):not(.np_datepicker_input:focus) {
+      border-color: #ef4444;
+    }
+  }
+
+  .prev-month,
+  .next-month {
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+    border-radius: 50%;
+    background: #f3f3f3;
+    cursor: pointer;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: #ccc;
+    }
+
+    svg {
+      max-width: 8px;
+      height: auto;
+    }
+  }
+}
+
+/********************
+Dark Theme
+*********************/
+.dark {
+  &.nepali-date-picker {
+    a.active svg {
+      fill: #000;
+    }
+  }
+
+  .datepicker {
+    &__options-container {
+      border-color: #000;
+      background-color: #000;
+      color: #fff;
+    }
+    &__container {
+      background: #333;
+      &__select {
+        color: #fff;
+        option {
+          color: #333;
+          &:checked {
+            background-color: #333;
+            color: #fff;
+          }
+        }
+      }
+    }
+    &__date {
+      &--current-day {
+        border: none;
+        position: relative;
+        z-index: 999;
+        height: 100%;
+        background-color: #555;
+      }
+      &--active {
+        background-color: #000;
+        color: #fff;
+        // &:hover {
+        //   color: #fff;
+        // }
+      }
+      &--disabled {
+        background: #222;
+      }
+      &:hover:not(.datepicker__date--active) {
+        background-color: #222;
+        color: #fff;
+      }
+    }
+
+    &__days {
+      background-color: #333;
+    }
+    &__days-container {
+      color: #aaa;
+    }
+    &__weekday {
+      border-color: #555;
+    }
+  }
+  .np_datepicker_input {
+    &--active,
+    &:focus,
+    &:hover {
+      outline: 1px solid #000;
+    }
+  }
+}
+
