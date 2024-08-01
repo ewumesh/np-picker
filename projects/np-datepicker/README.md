@@ -1,4 +1,4 @@
-# NepaliDatepickerAngular
+# Nepali Datepicker Angular
 
 The Angular Nepali Datepicker is an npm package designed to integrate a Nepali date picker component into Angular applications. This package allows users to select dates using the Nepali calendar system, which is different from the Gregorian calendar commonly used in many parts of the world.
 
@@ -77,5 +77,29 @@ on component to use
 |-------| --------- | ----------- |
 |dateInAD|dateValue|Emits on date selected on datepicker view, Date(AD) value in string with the given dateFormat. Default to `yyyy/mm/dd` format|
 |dateInBS|dateValue|Emits on date selected on datepicker view, Date(BS) value in string with the given dateFormat. Default to `yyyy/mm/dd` format|
+
+### Services
+Services to converter AD to BS or BS to AD dates.
+
+```Typescript
+import { NepaliDatepickerService } from 'nepali-datepicker-angular';
+
+    constructor (private _nepaliDatepickerService: NepaliDatepickerService) {
+          const ADDate = this._nepaliDatepickerService.BSToAD(BSDate, 'yyyy/mm/dd');
+          const BSDate = this._nepaliDatepickerService.ADToBS(ADDate, 'yyyy/mm/dd');
+        }
+        
+```
+- ADToBS
+    - Converts AD Date to BS Date. It requires 2 arguments,
+        - AD date in string
+        - format of the AD date
+    returns BS date in string with same format as of AD date.
+
+- BSToAD
+    - Converts BS Date to AD Date. It requires 2 arguments,
+        - BS date in string
+        - format of the AD date
+    returns AD date in string with same format as of BS date.
 
 [Link](npmjs.com/package/nep-datepicker) to NPM package.

@@ -1,14 +1,18 @@
 {
   "name": "nep-datepicker",
-  "version": "1.1.12",
-  "description": "Angular nepali datepicker library with no dependencies",
+  "version": "1.1.14",
+  "description": "The Angular Nepali Datepicker is an npm package designed to integrate a Nepali date picker component into Angular applications.",
   "keywords": [
     "datepicker",
     "nepali datepicker",
     "angular nepali datepicker",
     "nepali angular datepicker",
     "bs datepicker",
-    "ad bs datepicker"
+    "ad bs datepicker",
+    "nep datepicker",
+    "angular datepicker",
+    "angular", "angular 12", "ne-datepicker",
+    "ewumesh"
   ],
   "author": "Ewumesh <umeshthapa539@gmail.com>",
   "repository": {
