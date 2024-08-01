@@ -1,5 +1,5 @@
 {
-  "name": "nepali-datepicker-angular",
+  "name": "nep-datepicker",
   "version": "1.1.0",
   "description": "Angular nepali datepicker library with no dependencies",
   "keywords": [
@@ -10,13 +10,10 @@
     "bs datepicker",
     "ad bs datepicker"
   ],
-  "author": {
-    "name": "Rikesh Chhunju",
-    "email": "chhunju.rikesh@gmail.com"
-  },
+  "author": "Ewumesh <umeshthapa539@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/recase/angular-nepali-datepicker"
+    "url": "git+https://github.com/ewumesh/np-picker.git"
   },
   "peerDependencies": {
     "@angular/common": ">=12.0.0",
@@ -27,7 +24,11 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/recase/angular-nepali-datepicker/issues"
+    "url": "https://github.com/ewumesh/np-picker/issues"
   },
-  "homepage": "https://github.com/recase/angular-nepali-datepicker#readme"
+  "homepage": "https://github.com/ewumesh/np-picker/blob/main/README.md",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
