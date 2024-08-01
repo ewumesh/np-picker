@@ -1,0 +1,70 @@
+.datepicker {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    margin-block: 0 4px;
+  }
+  &__selector {
+    margin-block: 0 4px;
+  }
+  &__description {
+    margin-block: 0 16px;
+  }
+
+  &__block{
+    width: 400px;
+    display: block;
+    margin-bottom: 16px;
+
+    &--basic {
+      // display: flex;
+      // gap: 16px;
+    }
+
+    &__label {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    &__description {
+      font-size: 16px;
+      margin-block: 8px;
+      display: block;
+    }
+
+    p{
+      margin-block:0 4px;
+      font-size: 14px;
+    }
+  }
+  
+  &__table{
+    border-collapse: collapse;
+    
+    td {
+      padding: 6px 12px;
+    }
+    tr {
+      border-bottom: 2px solid #333;
+    }
+  }
+}
+
+hr {
+  width: 100%;
+}
+
+.datepicker-options {
+  margin-bottom: 16px;
+  display: block;
+  &__block{
+    display: flex;
+    gap: 12px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

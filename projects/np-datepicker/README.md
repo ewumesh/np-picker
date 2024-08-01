@@ -4,7 +4,7 @@ Angular library with no dependency.
 
 Datepicker with both AD and BS feature.
 
-See [Demo and Documentation](https://recase.github.io/angular-nepali-datepicker/) for more information.
+See [Demo and Documentation](https://github.com/ewumesh/np-picker) for more information.
 
 ## installation
 
@@ -38,4 +38,4 @@ on component to use
 <ne-datepicker [date]="date" dateIn="AD" (dateInBS)="updateNepaliDate($event)" (dateInAD)="updateEnglishDate($event)"> </ne-datepicker>
 ```
 
-[Link](https://www.npmjs.com/package/nepali-datepicker-angular) to NPM package.
+[Link](https://www.npmjs.com/package/nep-datepicker) to NPM package.

@@ -1,0 +1,299 @@
+<main class="datepicker">
+  <h2 class="datepicker__header">Angular Nepali datepicker</h2>
+  <h4 class="datepicker__selector">selector: ne-datepicker</h4>
+
+  <p class="datepicker__description">
+    A datepicker for both AD and BS, With no other dependencies.
+  </p>
+
+  <h2 class="datepicker__header">DEMO</h2>
+
+  <div class="datepicker__block">
+    <label class="datepicker__block__label">Basic</label>
+    <pre>
+      <code class="language-html">
+      &lt;ne-datepicker
+        [date]=&quot;date&quot;
+        dateIn=&quot;AD&quot;
+        (dateInBS)=&quot;updateNepaliDate($event)&quot;
+        (dateInAD)=&quot;updateEnglishDate($event)&quot;
+      &gt;
+      &lt;/ne-datepicker&gt;
+
+      </code>
+    </pre>
+
+    <ne-datepicker
+      [date]="date"
+      dateIn="AD"
+      (dateInBS)="updateNepaliDate($event)"
+      (dateInAD)="updateEnglishDate($event)"
+    ></ne-datepicker>
+
+    <label class="datepicker__block__description">Output</label>
+    <p>
+      Nepali date: <span>{{ nepaliDate }}</span>
+    </p>
+    <p>
+      English date: <span>{{ englishDate }}</span>
+    </p>
+  </div>
+
+  <div class="datepicker__block">
+    <label class="datepicker__block__label">With more options</label>
+
+    <div class="datepicker-options">
+      <div class="datepicker-options__block">
+        <p>Select primary color</p>
+        <input type="color" [(ngModel)]="primaryColor" /><br /><br />
+      </div>
+      <div class="datepicker-options__block">
+        <p>Dark theme</p>
+        <input type="checkbox" [(ngModel)]="isDark" />
+      </div>
+      <div class="datepicker-options__block">
+        <p>Error State</p>
+        <input type="checkbox" [(ngModel)]="isError" />
+      </div>
+      <div class="datepicker-options__block">
+        <p>Has multiple calendar View</p>
+        <input type="checkbox" [(ngModel)]="hasMultipleCalendarView" />
+      </div>
+      <div class="datepicker-options__block">
+        <p>Language</p>
+        <select [(ngModel)]="language">
+          <option *ngFor="let lang of languageOptions" [value]="lang.value">
+            {{ lang.label }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <ne-datepicker
+      [date]="date"
+      dateIn="AD"
+      (dateInBS)="updateItNepaliDate($event)"
+      (dateInAD)="updateItEnglishDate($event)"
+      [primaryColor]="primaryColor"
+      [language]="language"
+      [hasMultipleCalendarView]="hasMultipleCalendarView"
+      [darkTheme]="isDark"
+      [isError]="isError"
+    ></ne-datepicker>
+  </div>
+
+  <div class="datepicker__block">
+    <label class="datepicker__block__label">With disabled dates</label>
+
+    <label class="datepicker__block__description">minimum date</label>
+    <ne-datepicker
+      [date]="date"
+      dateIn="AD"
+      (dateInBS)="updateItNepaliDate($event)"
+      (dateInAD)="updateItEnglishDate($event)"
+      [primaryColor]="primaryColor"
+      [language]="language"
+      [hasMultipleCalendarView]="hasMultipleCalendarView"
+      [darkTheme]="isDark"
+      [isError]="isError"
+      [minDate]="minDate"
+    ></ne-datepicker>
+    <label class="datepicker__block__description">maximum date</label>
+    <ne-datepicker
+      [date]="date"
+      dateIn="AD"
+      (dateInBS)="updateItNepaliDate($event)"
+      (dateInAD)="updateItEnglishDate($event)"
+      [primaryColor]="primaryColor"
+      [language]="language"
+      [maxDate]="maxDate"
+      [hasMultipleCalendarView]="hasMultipleCalendarView"
+      [darkTheme]="isDark"
+      [isError]="isError"
+    ></ne-datepicker>
+  </div>
+  <hr />
+  <h2 class="datepicker__header">Documentation</h2>
+  <section class="theming">
+    <h4>Set the root primary color for the date picker on app.module.ts as:</h4>
+
+    <pre>
+      <code>
+        import {{ "{" }} NepaliDatepickerModule {{
+          "}"
+        }} from 'nepali-datepicker-angular';
+  
+        @NgModule({{ "{" }}
+          declarations: [...],
+          imports: [
+            ..., 
+            NepaliDatepickerModule.forRoot({{ "{" }}primaryColor: 'red'{{ "}" }}),
+            ...
+          ],
+          providers: [...],
+          bootstrap: [...],
+      {{ "}" }})
+      </code>
+    </pre>
+  </section>
+
+  <section class="properties">
+    <h3>Properties</h3>
+    <table class="datepicker__table">
+      <thead class="datepicker__table__header">
+        <tr>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>date</td>
+          <td>string</td>
+          <td>-</td>
+          <td>
+            Date value in string in format 'yyyy/mm/dd' or specific formate
+            specify in 'dateFormat' property.
+          </td>
+        </tr>
+        <tr>
+          <td>dateFormat</td>
+          <td>string</td>
+          <td>yyyy/mm/dd</td>
+          <td>
+            Date format for date property and also used for the output date
+            format
+          </td>
+        </tr>
+        <tr>
+          <td>dateIn</td>
+          <td>string</td>
+          <td>BS</td>
+          <td>Date type of the given date input. Accepts `BS` or `AD`.</td>
+        </tr>
+        <tr>
+          <td>minDate</td>
+          <td>Date</td>
+          <td>-</td>
+          <td>Minimum selectable date in `AD`.</td>
+        </tr>
+        <tr>
+          <td>maxDate</td>
+          <td>Date</td>
+          <td>-</td>
+          <td>Maximum selectable date in `AD`.</td>
+        </tr>
+        <tr>
+          <td>language</td>
+          <td>string</td>
+          <td>ne</td>
+          <td>
+            Language for the datepicker view. Accept only `ne`(Nepali) or
+            `en`(English)
+          </td>
+        </tr>
+        <tr>
+          <td>Placeholder</td>
+          <td>string</td>
+          <td>Enter date</td>
+          <td>Placeholder value to display</td>
+        </tr>
+        <tr>
+          <td>hasMultipleCalendarView</td>
+          <td>boolean</td>
+          <td>True</td>
+          <td>Allow to switch datepicker with `AD` and `BS` date type</td>
+        </tr>
+        <tr>
+          <td>isError</td>
+          <td>boolean</td>
+          <td>False</td>
+          <td>Flag to indicate error state and show error outline</td>
+        </tr>
+        <tr>
+          <td>primaryColor</td>
+          <td>string</td>
+          <td>-</td>
+          <td>
+            Color value for datepicker primary color. Accept string color name
+            or the hex color value.
+          </td>
+        </tr>
+        <tr>
+          <td>darkTheme</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>
+            Flag to set dark theme or light theme for the datepicker view.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="events">
+    <h3>Events</h3>
+    <table class="datepicker__table">
+      <thead class="datepicker__table__header">
+        <tr>
+          <th>Event</th>
+          <th>parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>dateInAD</td>
+          <td>dateValue</td>
+          <td>
+            Emits on date selected on datepicker view, Date(AD) value in string
+            with the given dateFormat. Default to `yyyy/mm/dd` format
+          </td>
+        </tr>
+        <tr>
+          <td>dateInBS</td>
+          <td>dateValue</td>
+          <td>
+            Emits on date selected on datepicker view, Date(BS) value in string
+            with the given dateFormat. Default to `yyyy/mm/dd` format
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h3>Services</h3>
+    Services to converter AD to BS or BS to AD dates.
+    <p>Usage</p>
+    <pre>
+      <code>
+        import {{'{'}} NepaliDatepickerService {{'}'}} from 'nepali-datepicker-angular';
+
+        constructor (private _nepaliDatepickerService: NepaliDatepickerService) {{'{'}}
+          const ADDate = this._nepaliDatepickerService.BSToAD(BSDate, 'yyyy/mm/dd');
+          const BSDate = this._nepaliDatepickerService.ADToBS(ADDate, 'yyyy/mm/dd');
+        {{'}'}}
+      </code>
+    </pre>
+    <ul>
+      <li>
+        <p>ADToBS</p>
+        Converts AD Date to BS Date. It requires 2 arguments,
+        <ol>
+          <li>AD date in string</li>
+          <li>format of the AD date</li>
+        </ol>
+        returns BS date in string with same format as of AD date.
+      </li>
+      <li>
+        <p>BSToAD</p>
+        Converts BS Date to AD Date. It requires 2 arguments,
+        <ol>
+          <li>BS date in string</li>
+          <li>format of the AD date</li>
+        </ol>
+        returns AD date in string with same format as of BS date.
+      </li>
+    </ul>
+  </section>
+</main>
