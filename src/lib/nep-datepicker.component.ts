@@ -26,7 +26,7 @@ import {
   monthsMapping,
   englishMonthMapping,
 } from './constants/mapping';
-import { NepaliDatepickerAngularPrivateService } from './services/nepali-datepicker-angular-private.service';
+import { NepaliDatepickerAngularPrivateService } from './services/nep-datepicker-private.service';
 import { DatePipe } from '@angular/common';
 import { englishLeapMonths, englishMonths } from './constants/data';
 type DateFormatType = 'yyyy/mm/dd' | 'dd/mm/yyyy' | 'yyyy-mm-dd' | 'dd-mm-yyyy';
@@ -35,8 +35,8 @@ type MonthDisplayType = 'default' | 'short';
 type DateIn = 'AD' | 'BS';
 @Component({
   selector: 'ne-datepicker',
-  templateUrl: `nepali-datepicker-angular.component.html`,
-  styleUrls: ['nepali-datepicker-angular.component.scss'],
+  templateUrl: `nep-datepicker.component.html`,
+  styleUrls: ['nep-datepicker.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class NepaliDatepickerComponent

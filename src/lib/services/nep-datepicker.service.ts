@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NepaliDatepickerAngularPrivateService } from './nepali-datepicker-angular-private.service';
+import { NepaliDatepickerAngularPrivateService } from './nep-datepicker-private.service';
 type DateFormat = 'yyyy/mm/dd' | 'dd/mm/yyyy' | 'yyyy-mm-dd' | 'dd-mm-yyyy';
 @Injectable({
   providedIn: 'root',

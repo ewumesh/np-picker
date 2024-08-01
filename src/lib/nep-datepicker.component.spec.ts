@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NepaliDatepickerComponent } from './nepali-datepicker-angular.component';
+import { NepaliDatepickerComponent } from './nep-datepicker.component';
 
 describe('NepaliDatepickerComponent', () => {
   let component: NepaliDatepickerComponent;

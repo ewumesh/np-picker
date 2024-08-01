@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NepaliDatepickerService } from './nepali-datepicker-angular.service';
+import { NepaliDatepickerService } from './nep-datepicker.service';
 
 describe('NepaliDatepickerService', () => {
   let service: NepaliDatepickerService;
